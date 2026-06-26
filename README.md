@@ -72,6 +72,47 @@ python tidybox.py undo
 python tidybox.py watch ~/Downloads
 ```
 
+## Adding to PATH
+
+After building with PyInstaller, move the binary to a directory on your PATH so you can run `tidybox` from anywhere.
+
+### Linux / macOS
+
+```bash
+mkdir -p ~/.local/bin
+cp dist/tidybox ~/.local/bin/tidybox
+```
+
+Then add this to your `~/.bashrc` or `~/.zshrc`:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+Apply it:
+
+```bash
+source ~/.bashrc
+```
+
+### Windows
+
+Move `dist/tidybox.exe` to a folder like `C:\Users\YourName\bin\`, then add that folder to PATH:
+
+1. Search "Environment Variables" in the Start menu
+2. Click "Environment Variables"
+3. Under "User variables", select `Path` → Edit
+4. Click New and paste the folder path
+5. Click OK and restart your terminal
+
+### Verify
+
+```bash
+which tidybox      # Linux/macOS
+where tidybox      # Windows
+```
+
+
 ## Examples
 
 Before:
@@ -117,18 +158,6 @@ tidybox/
 ├── README.md
 └── LICENSE
 ```
-
-## Roadmap
-
-* [ ] Basic file organization
-* [ ] Dry-run mode
-* [ ] Undo support
-* [ ] Recursive organization
-* [ ] Watch mode
-* [ ] Custom rules
-* [ ] Duplicate file detection
-* [ ] Configuration file support
-* [ ] Plugin system
 
 ## Why TidyBox?
 
