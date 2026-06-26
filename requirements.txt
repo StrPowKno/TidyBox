@@ -1,1 +1,5 @@
-
+click
+watchdog
+rich
+# for compiling install
+# pyinstaller
